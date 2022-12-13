@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <button type="buton" onclick="speak()">speak</button>
+        <script>
+            var SpeechRecognition=window.SpeechRecognition || window.webkitSpeechRecognition;
+            var recognition=new SpeechRecognition();
+            function speak()
+            {
+                recognition.start();
+            }
+            recognition.onresult=function(e){
+                var text=e.results[0][0].transcript;
+                console.log(text);
+            }
+        </script>
+    </body>
+</html>
